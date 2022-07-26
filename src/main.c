@@ -19,6 +19,7 @@ int	main(int argc, char **argv)
 	if (argc == 2)
 	{
 		check_xpm();
+		check_xpm_2();
 		data = ft_calloc(sizeof(t_data), 1);
 		if (!data)
 			exit (1);

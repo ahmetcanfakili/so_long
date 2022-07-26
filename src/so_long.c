@@ -63,8 +63,6 @@ void	print_screen(t_data *data)
 
 void	take_image(t_data *data)
 {
-	void	check_xpm();
-
 	data->img = malloc(sizeof(void *) * 5);
 	data->img[0] = mlx_xpm_file_to_image(data->mlx, PLAYER, \
 		&data->img_width, &data->img_height);
