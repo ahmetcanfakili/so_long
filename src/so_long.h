@@ -63,6 +63,7 @@ void	check_ber_extension(char *file);
 void	check_rectangle_map(t_data *data);
 void	check_map_wall(t_data *data);
 void	check_map_assets(t_data *data);
+void	check_map_assets_helper(void);
 void	game_finish(t_data *data);
 int		x_button(t_data *data);
 void	moveup(t_data *data);
@@ -71,12 +72,14 @@ void	movedown(t_data *data);
 void	moveright(t_data *data);
 void	mov_count_on_screen(t_data *data);
 void	check_xpm(void);
-void	check_mlx(t_data *data);
+void	check_xpm_2(void);
 void	ft_img_free(t_data *data);
 void	ft_map_free(t_data *data);
-void	print_background(t_data *data);
-void	check_map_assets_helper(void);
-void	print_screen_helper(t_data *data, int i);
-void	read_map_helper(t_data *data, int fd);
+void	check_mlx(t_data *data);
+
+
+//void	print_background(t_data *data);
+//void	print_screen_helper(t_data *data, int i);
+//void	read_map_helper(t_data *data, int fd);
 
 #endif
