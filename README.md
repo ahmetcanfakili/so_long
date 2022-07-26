@@ -5,4 +5,4 @@ Mini 2D Game !
 make
 
 
-./so_long maps/map1.ber
+./so_long test_map.ber
