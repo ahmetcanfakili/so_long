@@ -74,5 +74,9 @@ void	check_xpm(void);
 void	check_mlx(t_data *data);
 void	ft_img_free(t_data *data);
 void	ft_map_free(t_data *data);
+void	print_background(t_data *data);
+void	check_map_assets_helper(void);
+void	print_screen_helper(t_data *data, int i);
+void	read_map_helper(t_data *data, int fd);
 
 #endif
