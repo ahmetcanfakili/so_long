@@ -12,55 +12,6 @@
 
 #include "so_long.h"
 
-void	print_screen(t_data *data)
-{
-	int	i;
-	int	j;
-	int	k;
-
-	i = 0;
-	j = 0;
-	k = 0;
-	while ((j != data->map_width) && k != data->map_height)
-	{
-		mlx_put_image_to_window(data->mlx, data->mlx_win, \
-			data->img[1], 64 * j, 64 * k);
-		j++;
-		if (j == data->map_width)
-		{
-			j = 0;
-			k++;
-		}
-	}
-	data->img_xpos = 0;
-	data->img_ypos = 0;
-	while (data->ttl_str[i])
-	{
-		if (data->ttl_str[i] == 'P')
-		{
-			mlx_put_image_to_window(data->mlx, data->mlx_win, \
-			data->img[0], data->img_xpos, data->img_ypos);
-			data->index = i;
-		}
-		else if (data->ttl_str[i] == '1')
-			mlx_put_image_to_window(data->mlx, data->mlx_win, \
-				data->img[2], data->img_xpos, data->img_ypos);
-		else if (data->ttl_str[i] == 'C')
-			mlx_put_image_to_window(data->mlx, data->mlx_win, \
-				data->img[3], data->img_xpos, data->img_ypos);
-		else if (data->ttl_str[i] == 'E')
-			mlx_put_image_to_window(data->mlx, data->mlx_win, \
-				data->img[4], data->img_xpos, data->img_ypos);
-		data->img_xpos += 64;
-		if (data->ttl_str[i] == '\n')
-		{
-			data->img_xpos = 0;
-			data->img_ypos += 64;
-		}
-		i++;
-	}	
-}
-
 void	take_image(t_data *data)
 {
 	data->img = malloc(sizeof(void *) * 5);
@@ -80,13 +31,10 @@ void	read_map(t_data *data, char *file)
 {
 	size_t	i;
 	int		fd;
-	char	*line;
-	char	*total_str;
 	char	**map;
 	int		m;
 
 	i = 0;
-	total_str = 0;
 	map = 0;
 	fd = open(file, O_RDONLY);
 	if (fd < 0)
@@ -95,6 +43,24 @@ void	read_map(t_data *data, char *file)
 		exit (1);
 	}
 	check_ber_extension(file);
+	read_map_helper(data, fd);
+	m = 0;
+	while (data->map[i++])
+	{
+		m++;
+		data->map_height = m;
+	}
+	check_rectangle_map(data);
+	check_map_assets(data);
+	check_map_wall(data);
+}
+
+void	read_map_helper(t_data *data, int fd)
+{
+	char	*total_str;
+	char	*line;
+
+	total_str = 0;
 	while (1)
 	{
 		line = get_next_line(fd);
@@ -106,15 +72,6 @@ void	read_map(t_data *data, char *file)
 	check_blank_map(total_str);
 	data->ttl_str = total_str;
 	data->map = ft_split(total_str, '\n');
-	m = 0;
-	while (data->map[i++])
-	{
-		m++;
-		data->map_height = m;
-	}
-	check_rectangle_map(data);
-	check_map_assets(data);
-	check_map_wall(data);
 }
 
 void	game_finish(t_data *data)

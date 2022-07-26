@@ -6,11 +6,11 @@
 /*   By: afakili <ahmetcanfakili50@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/26 19:09:52 by afakili           #+#    #+#             */
-/*   Updated: 2022/06/26 19:09:53 by afakili          ###   ########.fr       */
+/*   Updated: 2022/07/27 02:27:47 by afakili          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../src/so_long.h"
 
 void	mov_count_on_screen(t_data *data)
 {
