@@ -6,7 +6,7 @@
 /*   By: afakili <ahmetcanfakili50@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 02:04:18 by afakili           #+#    #+#             */
-/*   Updated: 2022/06/26 19:04:26 by afakili          ###   ########.fr       */
+/*   Updated: 2022/07/26 17:01:31 by afakili          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,5 @@ int	key_events(int keycode, t_data *data)
 	mlx_clear_window(data->mlx, data->mlx_win);
 	print_screen(data);
 	mov_count_on_screen(data);
-	return (0);
+	return (keycode);
 }

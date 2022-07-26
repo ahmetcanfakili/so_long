@@ -64,6 +64,7 @@ void	print_screen(t_data *data)
 void	take_image(t_data *data)
 {
 	void	check_xpm();
+
 	data->img = malloc(sizeof(void *) * 5);
 	data->img[0] = mlx_xpm_file_to_image(data->mlx, PLAYER, \
 		&data->img_width, &data->img_height);
@@ -121,6 +122,10 @@ void	read_map(t_data *data, char *file)
 void	game_finish(t_data *data)
 {
 	ft_printf("Total Score: %d", data->xp * 1000);
+	ft_img_free(data);
+	mlx_destroy_window(data->mlx, data->mlx_win);
+	ft_map_free(data);
+	free(data);
 	exit(1);
 }
 

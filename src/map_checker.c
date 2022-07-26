@@ -119,7 +119,6 @@ void	check_xpm(void)
 	fd_c = open("./maps/c.xpm", O_RDWR);
 	fd_e = open("./maps/e.xpm", O_RDWR);
 	fd_p = open("./maps/p.xpm", O_RDWR);
-
 	if (fd_0 <= 0 || fd_1 <= 0 || fd_c <= 0 || fd_e <= 0 || fd_p <= 0)
 	{
 		ft_printf("XPM File Error!\n");
@@ -130,7 +129,6 @@ void	check_xpm(void)
 		close(fd_p);
 		exit(1);
 	}
-
 	close(fd_0);
 	close(fd_1);
 	close(fd_c);

@@ -71,5 +71,8 @@ void	movedown(t_data *data);
 void	moveright(t_data *data);
 void	mov_count_on_screen(t_data *data);
 void	check_xpm(void);
+void	check_mlx(t_data *data);
+void	ft_img_free(t_data *data);
+void	ft_map_free(t_data *data);
 
 #endif

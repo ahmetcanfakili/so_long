@@ -6,7 +6,7 @@
 /*   By: afakili <ahmetcanfakili50@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 02:35:15 by afakili           #+#    #+#             */
-/*   Updated: 2022/07/26 15:03:50 by afakili          ###   ########.fr       */
+/*   Updated: 2022/07/26 17:28:32 by afakili          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ void	movedown(t_data *data)
 			|| data->xp == data->collectible))
 	{
 		data->step++;
-
 		data->ttl_str[data->index] = '0';
 		if (data->ttl_str[data->index + data->map_width + 1] == 'C')
 			data->xp++;
@@ -54,7 +53,6 @@ void	moveleft(t_data *data)
 			|| data->xp == data->collectible))
 	{
 		data->step++;
-
 		data->ttl_str[data->index] = '0';
 		if (data->ttl_str[data->index - 1] == 'C')
 			data->xp++;
@@ -72,7 +70,6 @@ void	moveright(t_data *data)
 			|| data->xp == data->collectible))
 	{
 		data->step++;
-
 		data->ttl_str[data->index] = '0';
 		if (data->ttl_str[data->index + 1] == 'C')
 			data->xp++;

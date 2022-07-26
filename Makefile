@@ -6,7 +6,7 @@ MFLAGS = utils/get_next_line/get_next_line.a utils/libft/libft.a mlx/libmlx.a ut
 
 AFLAGS =  -Wall -Wextra -Werror -I./mlx -I.utils/libft -I.utils/get_next_line -I.utils/ft_printf
 
-SRCS = src/main.c src/map_checker.c src/so_long.c src/key_events.c src/move_player.c src/mov_count_on_screen.c
+SRCS = src/main.c src/map_checker.c src/so_long.c src/key_events.c src/move_player.c src/mov_count_on_screen.c src/free.c
 
 OBJS = $(SRCS:.c=.o)
 

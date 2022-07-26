@@ -22,9 +22,7 @@ int	main(int argc, char **argv)
 		data = ft_calloc(sizeof(t_data), 1);
 		if (!data)
 			exit (1);
-		data->mlx = mlx_init();
-		if (data->mlx == NULL)
-			ft_printf("mlx_init() Error!\n");
+		check_mlx(data);
 		read_map(data, argv[1]);
 		data->mlx_win = mlx_new_window(data->mlx, 64 * data->map_width, \
 			64 * data->map_height, "|| 42 ISTANBUL GAME STUDIO ||");
@@ -35,8 +33,18 @@ int	main(int argc, char **argv)
 		mov_count_on_screen(data);
 		mlx_loop(data->mlx);
 	}
-	
 	else
 		ft_printf("Argument Error!\n");
 	exit (1);
+}
+
+void	check_mlx(t_data *data)
+{
+	data->mlx = mlx_init();
+	if (data->mlx == NULL)
+	{
+		ft_printf("mlx_init() Error!\n");
+		free(data);
+		exit(1);
+	}
 }
