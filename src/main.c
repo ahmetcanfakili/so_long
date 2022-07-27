@@ -32,7 +32,7 @@ int	main(int argc, char **argv)
 		mlx_hook(data->mlx_win, 2, 1L << 0, key_events, data);
 		mlx_hook(data->mlx_win, 17, 0, x_button, data);
 		mov_count_on_screen(data);
-		system("leaks so_long");
+		//system("leaks so_long");
 		mlx_loop(data->mlx);
 	}
 	else

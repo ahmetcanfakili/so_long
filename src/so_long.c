@@ -68,6 +68,7 @@ void	read_map_helper(t_data *data, int fd)
 			break ;
 		data->map_width = ft_strlen1(line);
 		total_str = ft_strjoin1(total_str, line);
+		free(line);
 	}
 	check_blank_map(total_str);
 	data->ttl_str = total_str;
