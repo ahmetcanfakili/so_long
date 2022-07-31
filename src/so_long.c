@@ -66,6 +66,11 @@ void	read_map_helper(t_data *data, int fd)
 		line = get_next_line(fd);
 		if (line == 0)
 			break ;
+		if (*line == '\n')
+		{
+			printf("The Map Cannot Contain Blank Lines!");
+			exit(1);
+		}
 		data->map_width = ft_strlen1(line);
 		total_str = ft_strjoin1(total_str, line);
 		free(line);
